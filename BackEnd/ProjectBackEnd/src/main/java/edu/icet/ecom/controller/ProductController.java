@@ -1,8 +1,8 @@
 package edu.icet.ecom.controller;
 
-import edu.icet.ecom.dto.User;
-import edu.icet.ecom.service.UserService;
-import edu.icet.ecom.service.impl.UserServiceImpl;
+import edu.icet.ecom.dto.Product;
+import edu.icet.ecom.service.ProductService;
+import edu.icet.ecom.service.impl.ProductServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
 @RequiredArgsConstructor
-public class UserController {
-    final UserService service;
+@RequestMapping("/product")
+public class ProductController {
+    final ProductService service;
 
-    @PostMapping("/create")
-    public void createUser(@RequestBody User user){
-        service.createUser(user);
+    @PostMapping("/add")
+    public void addProduct(@RequestBody Product product){
+        service.addProduct(product);
 
     }
-
-
 }
